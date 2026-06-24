@@ -160,27 +160,62 @@ Firebase Cloud Messaging
 ```text
 omniroute-smart-logistics/
 
-├── mobile-app/
-│   ├── lib/
-│   ├── assets/
-│   ├── services/
-│   ├── models/
-│   └── screens/
-│
-├── backend/
-│   ├── app/
-│   ├── routes/
-│   ├── services/
-│   ├── models/
-│   └── config/
-│
-├── database/
-│   ├── migrations/
-│   └── schema/
-│
-├── docs/
-│
-└── README.md
+.
+├── .env.example                # Example environment configuration file
+├── .gitignore                  # Root-level Git ignore rules
+├── build.gradle.kts            # Root-level build configuration script
+├── gradle.properties           # Global Gradle configuration properties
+├── local.properties            # Local SDK paths (automatically generated)
+├── metadata.json               # App metadata definitions
+├── settings.gradle.kts         # Project settings and module declarations
+├── assets/                     # Global static assets
+├── gradle/                     # Gradle Wrapper files
+└── app/                        # Main application module
+    ├── .gitignore              # App-module level Git ignore rules
+    ├── build.gradle.kts        # App-module build configuration script
+    ├── proguard-rules.pro      # ProGuard rules for code shrinking and obfuscation
+    └── src/
+        ├── androidTest/        # Instrumented tests running on physical devices/emulators
+        ├── test/               # Local unit tests running on the JVM
+        └── main/
+            ├── AndroidManifest.xml   # Core Android system manifest declaration
+            ├── java/
+            │   └── com/
+            │       └── example/
+            │           ├── data/                   # Data Layer (Database, APIs, Repositories)
+            │           │   ├── api/
+            │           │   │   └── GeminiClient.kt        # API client integration (e.g., Gemini AI API)
+            │           │   ├── database/
+            │           │   │   ├── DeliveryDao.kt         # Database Access Object for Delivery entities
+            │           │   │   ├── DeliveryDatabase.kt    # Room Database configuration
+            │           │   │   └── DeliveryEntity.kt      # Database schema entity representing deliveries
+            │           │   └── repository/
+            │           │       └── DeliveryRepository.kt  # Single source of truth interfacing DB and API
+            │           └── ui/                     # Presentation Layer (Jetpack Compose Screens & ViewModels)
+            │               ├── MainActivity.kt            # Entry-point Activity for the application
+            │               ├── screens/
+            │               │   ├── AuthenticationScreen.kt # Login/Auth screen layout and interactions
+            │               │   └── MainDashboard.kt        # Primary dashboard/delivery tracking screen
+            │               ├── theme/                     # App design tokens and styling configurations
+            │               │   ├── Color.kt               # Palette definitions
+            │               │   ├── Theme.kt               # Jetpack Compose Theme wrappers
+            │               │   └── Type.kt                # Typography configurations
+            │               └── viewmodel/
+            │                   └── DeliveryViewModel.kt   # Business logic and UI state management
+            └── res/            # App Resources
+                ├── drawable/           # Vector drawables and raster images
+                ├── mipmap-anydpi-v26/  # Adaptive launcher icons
+                ├── mipmap-hdpi/        # Launcher icons for high-density screens
+                ├── mipmap-mdpi/        # Launcher icons for medium-density screens
+                ├── mipmap-xhdpi/       # Launcher icons for extra-high-density screens
+                ├── mipmap-xxhdpi/      # Launcher icons for double-extra-high-density screens
+                ├── mipmap-xxxhdpi/     # Launcher icons for triple-extra-high-density screens
+                ├── values/             # XML-based style elements
+                │   ├── colors.xml      # Color resources fallback
+                │   ├── strings.xml     # Hardcoded application string constants
+                │   └── themes.xml      # Standard Android system theme overrides
+                └── xml/                # Custom system resource configurations (e.g., file paths, network configs)
+
 ```
 
 ---
