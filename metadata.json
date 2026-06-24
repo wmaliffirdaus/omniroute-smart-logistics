@@ -1,0 +1,6 @@
+{
+  "name": "OmniRoute",
+  "description": "Smart Logistics & Fleet Optimization platform for enterprise couriers, route planning, geofencing, and AI routing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
