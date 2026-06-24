@@ -1,222 +1,219 @@
-<div align="center">
-
 # 🚚 OmniRoute
 
-### Smart Logistics & Fleet Optimizer
+> Smart Logistics & Fleet Optimizer built with Kotlin, Jetpack Compose, Room Database, Google Maps APIs, and AI-powered route optimization.
 
-AI-powered logistics and fleet optimization platform featuring dynamic route planning, real-time GPS tracking, geofencing, offline-first synchronization, and performance analytics.
-
-![Flutter](https://img.shields.io/badge/Flutter-3.x-blue?logo=flutter)
-![Flask](https://img.shields.io/badge/Flask-Python-black?logo=flask)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue?logo=postgresql)
-![License](https://img.shields.io/badge/License-MIT-green)
-
-</div>
+![Kotlin](https://img.shields.io/badge/Kotlin-2.x-purple?logo=kotlin)
+![Android](https://img.shields.io/badge/Android-Native-green?logo=android)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-UI-blue)
+![Room](https://img.shields.io/badge/Room-Database-orange)
+![MVVM](https://img.shields.io/badge/Architecture-MVVM-red)
 
 ---
 
 ## 📖 Overview
 
-OmniRoute is a modern logistics and fleet management platform designed to help delivery drivers, couriers, and field service agents optimize their daily operations.
+OmniRoute is a modern Android logistics platform designed for delivery drivers, courier services, and fleet operators.
 
-The platform leverages intelligent route planning, real-time GPS tracking, geofencing, offline-first capabilities, and analytics dashboards to improve delivery efficiency, reduce travel time, and enhance operational visibility.
+The application helps drivers optimize routes, track deliveries in real time, manage delivery records offline, and analyze performance metrics through an intuitive mobile-first experience.
+
+Built using modern Android development practices, the project demonstrates expertise in:
+
+* Kotlin
+* Jetpack Compose
+* MVVM Architecture
+* Room Database
+* Offline-First Development
+* REST API Integration
+* AI-Powered Optimization
+* Location Services
+* Enterprise Mobile Application Design
 
 ---
 
 ## ✨ Features
 
-### 🗺️ Dynamic Route Optimization
+### 🗺️ Smart Route Optimization
 
-- Plan routes with multiple delivery destinations
-- Calculate the most efficient stop sequence
-- Display optimized routes on an interactive map
-- Provide Estimated Time of Arrival (ETA) for each destination
-- Recalculate routes based on traffic conditions
+* Generate optimized routes for multiple destinations
+* Calculate shortest and fastest delivery paths
+* Reduce travel distance and fuel consumption
+* Dynamic route recalculation
 
-### 📍 Live Location Tracking
+### 📍 Real-Time Delivery Tracking
 
-- Real-time GPS tracking
-- Driver location monitoring
-- Interactive map visualization
-- Route progress tracking
-- Delivery status updates
+* GPS-based location tracking
+* Live route progress monitoring
+* Delivery status updates
+* Route visualization on maps
 
-### 🔔 Geofencing & Notifications
+### 🔔 Geofencing Notifications
 
-- Create delivery zones
-- Detect arrival and departure automatically
-- Trigger local push notifications
-- Delivery reminders and confirmations
-- Automated workflow updates
+* Detect arrival at delivery locations
+* Automatic zone entry and exit tracking
+* Delivery reminders
+* Local push notifications
 
-### 📊 Performance Analytics Dashboard
+### 📊 Analytics Dashboard
 
 Monitor operational performance through:
 
-- Total deliveries completed
-- Weekly delivery trends
-- Fuel efficiency metrics
-- Distance travelled
-- Average delivery time
-- Time saved through optimization
-- Driver productivity score
+* Total deliveries completed
+* Weekly delivery trends
+* Average delivery duration
+* Distance travelled
+* Time saved through optimization
+* Driver productivity metrics
 
-### 📡 Offline-First Synchronization
+### 📡 Offline-First Architecture
 
-Designed for areas with poor connectivity.
+Designed for delivery operations in areas with limited connectivity.
 
-- Store delivery data locally
-- Complete deliveries offline
-- Queue pending actions automatically
-- Synchronize data once internet connection is restored
-- View sync status in real time
+* Local data persistence using Room Database
+* Offline delivery completion
+* Automatic synchronization when connectivity returns
+* Reliable data recovery
 
-### 📷 Proof of Delivery
+### 🤖 AI-Assisted Logistics
 
-- Capture delivery photos
-- Collect customer signatures
-- Scan QR codes and barcodes
-- Generate delivery confirmations
-- Store proof securely in the cloud
+* Intelligent route suggestions
+* Delivery planning assistance
+* AI-powered operational insights
+* Integrated Gemini API support
 
 ---
 
-## 🏗️ System Architecture
+## 🏗️ Architecture
+
+The application follows Clean MVVM Architecture principles.
 
 ```text
-Flutter Mobile App
+UI Layer (Jetpack Compose)
         │
         ▼
- REST API (Flask)
-        │
- ┌──────┼──────┐
- ▼      ▼      ▼
-PostgreSQL Redis AWS S3
+ViewModel Layer
         │
         ▼
-Firebase Cloud Messaging
+Repository Layer
+        │
+ ┌──────┴──────┐
+ ▼             ▼
+Room DB     API Services
+        │
+        ▼
+Data Sources
 ```
 
----
+### Architecture Components
 
-## 📱 Mobile Application
+#### UI Layer
 
-### Driver Features
+Responsible for rendering screens and handling user interactions.
 
-- Daily delivery task management
-- Route optimization
-- Navigation assistance
-- Delivery completion workflow
-- Offline operation support
-- Performance dashboard
+* MainActivity
+* Dashboard Screen
+* Authentication Screen
+* Compose UI Components
 
-### Manager Features
+#### ViewModel Layer
 
-- Fleet monitoring
-- Driver tracking
-- Delivery assignment
-- Operational analytics
-- Performance reporting
-- Route management
+Responsible for:
 
----
+* UI State Management
+* Business Logic
+* Lifecycle Awareness
+* Data Processing
 
-## 🛠️ Tech Stack
+#### Repository Layer
 
-### Frontend
+Acts as the single source of truth between:
 
-- Flutter
-- Dart
-- Material 3
-- Google Maps SDK / Mapbox
+* Remote APIs
+* Local Database
+* Business Logic
 
-### Backend
+#### Data Layer
 
-- Python
-- Flask
-- REST API
+Handles:
 
-### Database
-
-- PostgreSQL
-- Redis
-
-### Cloud Services
-
-- AWS EC2
-- AWS S3
-- AWS Lambda
-- Firebase Cloud Messaging (FCM)
-
-### Local Storage
-
-- SQLite
-- Hive
+* API Communication
+* Local Persistence
+* Data Synchronization
+* Entity Mapping
 
 ---
 
 ## 📂 Project Structure
 
 ```text
-omniroute-smart-logistics/
+app/src/main/java/com/example/
 
-.
-├── .env.example                # Example environment configuration file
-├── .gitignore                  # Root-level Git ignore rules
-├── build.gradle.kts            # Root-level build configuration script
-├── gradle.properties           # Global Gradle configuration properties
-├── local.properties            # Local SDK paths (automatically generated)
-├── metadata.json               # App metadata definitions
-├── settings.gradle.kts         # Project settings and module declarations
-├── assets/                     # Global static assets
-├── gradle/                     # Gradle Wrapper files
-└── app/                        # Main application module
-    ├── .gitignore              # App-module level Git ignore rules
-    ├── build.gradle.kts        # App-module build configuration script
-    ├── proguard-rules.pro      # ProGuard rules for code shrinking and obfuscation
-    └── src/
-        ├── androidTest/        # Instrumented tests running on physical devices/emulators
-        ├── test/               # Local unit tests running on the JVM
-        └── main/
-            ├── AndroidManifest.xml   # Core Android system manifest declaration
-            ├── java/
-            │   └── com/
-            │       └── example/
-            │           ├── data/                   # Data Layer (Database, APIs, Repositories)
-            │           │   ├── api/
-            │           │   │   └── GeminiClient.kt        # API client integration (e.g., Gemini AI API)
-            │           │   ├── database/
-            │           │   │   ├── DeliveryDao.kt         # Database Access Object for Delivery entities
-            │           │   │   ├── DeliveryDatabase.kt    # Room Database configuration
-            │           │   │   └── DeliveryEntity.kt      # Database schema entity representing deliveries
-            │           │   └── repository/
-            │           │       └── DeliveryRepository.kt  # Single source of truth interfacing DB and API
-            │           └── ui/                     # Presentation Layer (Jetpack Compose Screens & ViewModels)
-            │               ├── MainActivity.kt            # Entry-point Activity for the application
-            │               ├── screens/
-            │               │   ├── AuthenticationScreen.kt # Login/Auth screen layout and interactions
-            │               │   └── MainDashboard.kt        # Primary dashboard/delivery tracking screen
-            │               ├── theme/                     # App design tokens and styling configurations
-            │               │   ├── Color.kt               # Palette definitions
-            │               │   ├── Theme.kt               # Jetpack Compose Theme wrappers
-            │               │   └── Type.kt                # Typography configurations
-            │               └── viewmodel/
-            │                   └── DeliveryViewModel.kt   # Business logic and UI state management
-            └── res/            # App Resources
-                ├── drawable/           # Vector drawables and raster images
-                ├── mipmap-anydpi-v26/  # Adaptive launcher icons
-                ├── mipmap-hdpi/        # Launcher icons for high-density screens
-                ├── mipmap-mdpi/        # Launcher icons for medium-density screens
-                ├── mipmap-xhdpi/       # Launcher icons for extra-high-density screens
-                ├── mipmap-xxhdpi/      # Launcher icons for double-extra-high-density screens
-                ├── mipmap-xxxhdpi/     # Launcher icons for triple-extra-high-density screens
-                ├── values/             # XML-based style elements
-                │   ├── colors.xml      # Color resources fallback
-                │   ├── strings.xml     # Hardcoded application string constants
-                │   └── themes.xml      # Standard Android system theme overrides
-                └── xml/                # Custom system resource configurations (e.g., file paths, network configs)
-
+├── data/
+│   ├── api/
+│   │   └── GeminiClient.kt
+│   │
+│   ├── database/
+│   │   ├── DeliveryDao.kt
+│   │   ├── DeliveryDatabase.kt
+│   │   └── DeliveryEntity.kt
+│   │
+│   └── repository/
+│       └── DeliveryRepository.kt
+│
+└── ui/
+    ├── MainActivity.kt
+    │
+    ├── screens/
+    │   ├── AuthenticationScreen.kt
+    │   └── MainDashboard.kt
+    │
+    ├── viewmodel/
+    │   └── DeliveryViewModel.kt
+    │
+    └── theme/
+        ├── Color.kt
+        ├── Theme.kt
+        └── Type.kt
 ```
+
+---
+
+## 🛠️ Tech Stack
+
+### Mobile Development
+
+* Kotlin
+* Android SDK
+* Jetpack Compose
+* Material Design 3
+
+### Architecture
+
+* MVVM
+* Repository Pattern
+* State Management
+
+### Database
+
+* Room Database
+* SQLite
+
+### Networking
+
+* REST APIs
+* Gemini API Integration
+
+### Android Jetpack
+
+* ViewModel
+* Navigation
+* Lifecycle Components
+* Room Persistence
+
+### Development Tools
+
+* Android Studio
+* Gradle Kotlin DSL
+* Git & GitHub
 
 ---
 
@@ -224,89 +221,119 @@ omniroute-smart-logistics/
 
 ### Prerequisites
 
-- Flutter SDK
-- Python 3.11+
-- PostgreSQL
-- Git
+* Android Studio Hedgehog or newer
+* JDK 17+
+* Android SDK
+* Gradle 8+
 
 ### Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/omniroute-smart-logistics.git
+git clone https://github.com/yourusername/omniroute.git
 
-cd omniroute-smart-logistics
+cd omniroute
 ```
 
-### Mobile Application Setup
+### Configure Environment
 
-```bash
-cd mobile-app
+Create a local configuration file:
 
-flutter pub get
-
-flutter run
+```properties
+API_KEY=YOUR_API_KEY
+MAPS_API_KEY=YOUR_MAPS_API_KEY
 ```
 
-### Backend Setup
+### Build Project
 
 ```bash
-cd backend
+./gradlew build
+```
 
-python -m venv venv
+### Run Application
 
-source venv/bin/activate
+```bash
+./gradlew installDebug
+```
 
-pip install -r requirements.txt
+or simply run from Android Studio.
 
-flask run
+---
+
+## 🧪 Testing
+
+### Unit Tests
+
+```bash
+./gradlew test
+```
+
+### Instrumentation Tests
+
+```bash
+./gradlew connectedAndroidTest
 ```
 
 ---
 
 ## 📸 Screenshots
 
+### Authentication
+
+> Login and user authentication flow.
+
 ### Dashboard
 
-<img width="100%" alt="Dashboard Placeholder" src="https://via.placeholder.com/1200x600?text=Dashboard+Preview">
+> Overview of deliveries, performance metrics, and route status.
 
-### Route Optimization
+### Route Planner
 
-<img width="100%" alt="Route Preview" src="https://via.placeholder.com/1200x600?text=Route+Optimization">
+> Intelligent route optimization interface.
 
-### Fleet Tracking
+### Analytics
 
-<img width="100%" alt="Fleet Tracking" src="https://via.placeholder.com/1200x600?text=Fleet+Tracking">
+> Weekly performance and productivity tracking.
 
 ---
 
-## 🎯 Future Enhancements
+## 🎯 Learning Objectives
 
-- AI-powered route recommendations
-- Predictive delivery delay analysis
-- Driver behavior monitoring
-- Fuel consumption prediction
-- Fleet maintenance scheduling
-- Multi-warehouse support
-- Real-time traffic intelligence
-- Machine learning delivery forecasting
+This project was built to strengthen knowledge in:
+
+* Android Native Development
+* Jetpack Compose
+* MVVM Architecture
+* Clean Architecture Principles
+* Offline-First Mobile Applications
+* Local Data Persistence
+* AI API Integration
+* Logistics System Design
+* Scalable Android Applications
 
 ---
 
 ## 💼 Portfolio Highlights
 
-This project demonstrates:
+Through this project, I demonstrate experience with:
 
-- Mobile App Development with Flutter
-- Backend API Development with Flask
-- Geolocation & Mapping Integration
-- Real-Time Tracking
-- Geofencing
-- Push Notifications
-- Offline-First Architecture
-- Database Design
-- Cloud Integration
-- Data Visualization & Analytics
-- Enterprise Application Development
+✅ Kotlin Development
+
+✅ Android Native Applications
+
+✅ Jetpack Compose
+
+✅ Room Database
+
+✅ MVVM Architecture
+
+✅ Repository Pattern
+
+✅ Offline Data Synchronization
+
+✅ AI Integration
+
+✅ Location-Based Services
+
+✅ Enterprise Mobile Solutions
 
 ---
 
@@ -316,8 +343,10 @@ This project is licensed under the MIT License.
 
 ---
 
-<div align="center">
+### Author
 
-Built with ❤️ using Flutter, Flask, PostgreSQL, and AWS.
+**Wan Muhammad Alif Firdaus**
 
-</div>
+Junior Mobile Developer specializing in Android and Full-Stack Development.
+
+Passionate about building scalable mobile applications, modern Android solutions, and enterprise-grade software systems.
