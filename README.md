@@ -229,7 +229,7 @@ app/src/main/java/com/example/
 ### Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/omniroute.git
+git clone https://github.com/yourusername/omniroute-smart-logistics.git
 
 cd omniroute
 ```
@@ -347,6 +347,6 @@ This project is licensed under the MIT License.
 
 **Wan Muhammad Alif Firdaus**
 
-Junior Mobile Developer specializing in Android and Full-Stack Development.
+Mobile Developer specializing in Android and Full-Stack Development.
 
 Passionate about building scalable mobile applications, modern Android solutions, and enterprise-grade software systems.
